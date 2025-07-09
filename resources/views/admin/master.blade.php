@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+{{-- ====================script hanis==================== --}}
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title')</title>
-  @include('admin.body.styles')
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('preclinic/assets/img/favicon.png') }}">
+    <title>@yield('title')</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('preclinic/assets/css/bootstrap.min.css') }}">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{ asset('preclinic/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('preclinic/assets/plugins/fontawesome/css/all.min.css') }}">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('preclinic/assets/css/select2.min.css') }}">
+
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" href="{{ asset('preclinic/assets/plugins/datatables/datatables.min.css') }}">
+
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="{{ asset('preclinic/assets/css/feather.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('preclinic/assets/css/style.css') }}">
+
+    {{-- @include('admin.body.styles') --}}
 </head>
+
+
+
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
-  <!-- Navbar -->
+
+    {{-- <div class="wrapper"> --}}
+    <div class="main-wrapper">
+        <!-- header -->
+        @include('admin.body.header')
+        <!-- /.header -->
+
+        {{-- <!-- Navbar -->
   @include('admin.body.navbar')
-  <!-- /.navbar -->
+  <!-- /.navbar --> --}}
 
-  <!-- Main Sidebar Container -->
- @include('admin.body.sidebar')
+        <!-- Main Sidebar Container -->
+        @include('admin.body.sidebar')
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+        {{-- <div class="page-wrapper">
+    <d class="content"> --}}
+        <div class="page-wrapper">
+            <div class="content">
+                @yield('content')
+            </div>
+        </div>
+
+
+
+        <div class="sidebar-overlay" data-reff=""></div>
     </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      @yield('content')
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  @include('admin.body.footer')
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-@include('admin.body.scripts')
+    @include('admin.body.scripts')
 </body>
+
 </html>
